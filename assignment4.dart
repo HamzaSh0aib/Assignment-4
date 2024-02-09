@@ -24,6 +24,24 @@ void main() {
     first =second;
     second = next;
    }
-   stdout.write('$next');
+   stdout.write('$next ');
  }
+
+ //Question no 3 (Find prime number)
+ 
+ int numberr =73;
+ List<int> factor = [];
+
+ for (var i = 1; i <= numberr; i++) {
+   if(i!= numberr && numberr %i==0){
+    factor.add(i);
+   }
+ }
+ if(factor.length>2){
+  print('\n$numberr is not a prime number');
+ }
+ else{
+  print('\n$numberr is a prime number');
+ }
+
 }
