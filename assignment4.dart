@@ -44,4 +44,14 @@ void main() {
   print('\n$numberr is a prime number');
  }
 
+//Question no 4 (find factorial)
+print('Enter The Number');
+int factorial = int.parse(stdin.readLineSync()!);
+
+int result = 1;
+for (int i = 1; i <= factorial; i++) {
+  result*=i;
+}
+print('Factorial of $factorial = $result');
+
 }
