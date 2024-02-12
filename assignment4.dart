@@ -104,24 +104,57 @@ void main() {
   }
 //Question no 10 (Making Pyramid)
   print("Right-Angled Triangle Star Pattern:");
-  Starpattern(4,PatternType.asterick);
-
+  Starpattern(4, PatternType.asterick);
 
 //Question no 11 (Making Pyramid)
-print("Right-Angled Triangle Numaric Pattern:");
-Starpattern(4,PatternType.number);
+  print("Right-Angled Triangle Numaric Pattern:");
+  Starpattern(4, PatternType.number);
 
 //Question no 12 (Making pyramid)
-print('Right Angle Triangle Numeric pattern');
-Starpattern(4,PatternType.repeated);
+  print('Right Angle Triangle repeated pattern');
+  Starpattern(4, PatternType.repeated);
 
 //Question no 13(Making Pyramid)
-print('Right Angle Triangle Numeric pattern');
-Starpattern(4,PatternType.incresingNumber);
+  print('Right Angle Triangle increasing pattern');
+  Starpattern(4, PatternType.incresingNumber);
+
+//Question no 14
+  print('Diamond Shape Triangle ');
+
+  int number = 4;
+  for (int i = 0; i < number; i++) {
+    for (int j = (number - i); j > 1; j--) {
+      stdout.write(' ');
+    }
+    for (int j = 0; j <= i; j++) {
+      stdout.write('* ');
+    }
+
+    stdout.writeln();
+  }
+
+//Question no 15
+  print('Diamond Shape Triangle ');
+
+  int rows= 4;
+  int updatevalue = 1;
+
+  for (int i = 0; i < rows; i++) {
+    for (int j = (rows - i); j > 1; j--) {
+      stdout.write(' ');
+    }
+    for (int j = 0; j <= i; j++) {
+      stdout.write('$updatevalue');
+      updatevalue++;
+    }
+
+    stdout.writeln();
+  }
 }
 
-enum PatternType {asterick,number,repeated,incresingNumber}
-Starpattern(int n ,PatternType type) {
+enum PatternType { asterick, number, repeated, incresingNumber }
+
+Starpattern(int n, PatternType type) {
   int currentNumber = 1;
   for (var i = 1; i <= n; i++) {
     for (var j = 1; j <= i; j++) {
@@ -129,12 +162,13 @@ Starpattern(int n ,PatternType type) {
         case PatternType.asterick:
           stdout.write('* ');
           break;
-          case PatternType.number:
+        case PatternType.number:
           stdout.write('${j}');
-          break;case PatternType.repeated:
+          break;
+        case PatternType.repeated:
           stdout.write('$i');
           break;
-          case PatternType.incresingNumber:
+        case PatternType.incresingNumber:
           stdout.write('$currentNumber');
           currentNumber++;
           break;
@@ -143,7 +177,6 @@ Starpattern(int n ,PatternType type) {
     stdout.writeln();
   }
 }
-
 
 int cube(int num) {
   return (num * num * num);
