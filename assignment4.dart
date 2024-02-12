@@ -29,7 +29,7 @@ void main() {
 
  //Question no 3 (Find prime number)
  
- int numberr =73;
+ int numberr =3;
  List<int> factor = [];
 
  for (var i = 1; i <= numberr; i++) {
@@ -45,13 +45,14 @@ void main() {
  }
 
 //Question no 4 (find factorial)
-print('Enter The Number');
-int factorial = int.parse(stdin.readLineSync()!);
-
-int result = 1;
-for (int i = 1; i <= factorial; i++) {
-  result*=i;
-}
-print('Factorial of $factorial = $result');
-
+   print('Enter Nmber');
+  int num1 = int.parse(stdin.readLineSync()!);
+  int factorials (int number){
+    int fact = 1;
+    for (var i = 2; i <=number; i++) {
+      fact = fact*i;
+    }
+    return fact;
+  }
+  print('factorail of $count = ${factorials(num1)}');
 }
