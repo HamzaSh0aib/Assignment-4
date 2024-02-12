@@ -1,17 +1,20 @@
+import 'dart:ffi';
 import 'dart:io';
 
 void main() {
   // Question no 1
   List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  List<int> evenNumber = [];
   for (final i in numbers) {
     if (i % 2 == 0) {
-      print('Even numbers $i');
+      evenNumber.add(i);
     }
   }
+  print(' Orignal List = $numbers');
+  print(' Even Number List = $evenNumber');
   // Question no 2
-  print('Enter The Number ');
+  print('Enter The Number (For Fibnocci) ');
   int count = int.parse(stdin.readLineSync()!);
-
   int first = 0;
   int second = 1;
   int next;
@@ -27,8 +30,8 @@ void main() {
   }
 
   //Question no 3 (Find prime number)
-
-  int numberr = 3;
+  print('\nEnter Number (For Prime Number)');
+  int numberr = int.parse(stdin.readLineSync()!);
   List<int> factor = [];
 
   for (var i = 1; i <= numberr; i++) {
@@ -43,7 +46,7 @@ void main() {
   }
 
 //Question no 4 (find factorial)
-  print('Enter Nmber');
+  print('Enter Nmber (For Factorial)');
   int num1 = int.parse(stdin.readLineSync()!);
   int factorials(int number) {
     int fact = 1;
@@ -53,10 +56,10 @@ void main() {
     return fact;
   }
 
-  print('factorail of $count = ${factorials(num1)}');
+  print('factorail of $num1 = ${factorials(num1)}');
 
   //Question 5(find the sum of all digit)
-  print('Enter Number');
+  print('Enter Number (For Sum OF Digit)');
   int input = int.parse(stdin.readLineSync()!);
 
   int digitsum = 0; //1,2,3,4,5,6,
@@ -68,12 +71,52 @@ void main() {
   print('Sum of All Digits = $digitsum');
 
   // Question no 6 (Find The highest numbers)
-  List<int> listofnumbers = [1,2,3,55,22,66,33,88,99];
+  List<int> listofnumbers = [1, 2, 3, 55, 22, 66, 33, 88, 99];
+  print(listofnumbers);
   int firstdigit = listofnumbers[0];
   for (var i = 0; i < listofnumbers.length; i++) {
-    if(listofnumbers[i]>firstdigit){
-      firstdigit= listofnumbers[i];
+    if (listofnumbers[i] > firstdigit) {
+      firstdigit = listofnumbers[i];
     }
   }
-  print('Highest Value in the list = $firstdigit');
+  print('Highest Value from the list = $firstdigit');
+
+  //Question no 7 (Print the Table)
+  print('Enter Number (For Table)');
+  int table = int.parse(stdin.readLineSync()!);
+  for (var i = 1; i <= 10; i++) {
+    print('$table x $i = ${table * i}');
+  }
+//Question no 8 (Find Palindrome)
+  print('Enter the String Value for palindrome');
+  String palindrome = stdin.readLineSync()!;
+  bool ispalindrome = Palindrome(palindrome);
+
+  if (ispalindrome) {
+    print('$palindrome is a palindrome');
+  } else {
+    print('$palindrome is not a palindrome');
+  }
+
+//Question no 9
+  for (var i = 1; i <= 5; i++) {
+    print('$i and the cube of $i = ${cube(i)}');
+  }
+}
+
+int cube(int num) {
+  return (num * num * num);
+}
+
+bool Palindrome(String string) {
+  int i = 0, j = string.length - 1;
+  while (i < j) {
+    if (string[i] != string[j]) {
+      return false;
+    }
+    ;
+    i++;
+    j--;
+  }
+  return true;
 }
