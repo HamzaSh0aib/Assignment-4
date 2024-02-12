@@ -98,11 +98,52 @@ void main() {
     print('$palindrome is not a palindrome');
   }
 
-//Question no 9
+//Question no 9 (Find the cube)
   for (var i = 1; i <= 5; i++) {
     print('$i and the cube of $i = ${cube(i)}');
   }
+//Question no 10 (Making Pyramid)
+  print("Right-Angled Triangle Star Pattern:");
+  Starpattern(4,PatternType.asterick);
+
+
+//Question no 11 (Making Pyramid)
+print("Right-Angled Triangle Numaric Pattern:");
+Starpattern(4,PatternType.number);
+
+//Question no 12 (Making pyramid)
+print('Right Angle Triangle Numeric pattern');
+Starpattern(4,PatternType.repeated);
+
+//Question no 13(Making Pyramid)
+print('Right Angle Triangle Numeric pattern');
+Starpattern(4,PatternType.incresingNumber);
 }
+
+enum PatternType {asterick,number,repeated,incresingNumber}
+Starpattern(int n ,PatternType type) {
+  int currentNumber = 1;
+  for (var i = 1; i <= n; i++) {
+    for (var j = 1; j <= i; j++) {
+      switch (type) {
+        case PatternType.asterick:
+          stdout.write('* ');
+          break;
+          case PatternType.number:
+          stdout.write('${j}');
+          break;case PatternType.repeated:
+          stdout.write('$i');
+          break;
+          case PatternType.incresingNumber:
+          stdout.write('$currentNumber');
+          currentNumber++;
+          break;
+      }
+    }
+    stdout.writeln();
+  }
+}
+
 
 int cube(int num) {
   return (num * num * num);
