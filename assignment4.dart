@@ -1,4 +1,4 @@
-import 'dart:ffi';
+
 import 'dart:io';
 
 void main() {
@@ -150,6 +150,28 @@ void main() {
 
     stdout.writeln();
   }
+
+//Question no 16
+String predefinedEmail = 'user@gmail.com';
+String predefinedpassword = '123456';
+
+String enterEmail;
+String enterpassword;
+
+while (true) {
+  print('Enter Email');
+  enterEmail=stdin.readLineSync()!;
+  print('Enter Password');
+  enterpassword=stdin.readLineSync()!;
+  if (enterEmail==predefinedEmail&&enterpassword==predefinedpassword) {
+    print('Login SuccesFull......');
+    break;
+  } else {
+    print('Incorrect Credientails ....please try again');
+  }
+}
+
+
 }
 
 enum PatternType { asterick, number, repeated, incresingNumber }
