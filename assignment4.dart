@@ -1,4 +1,3 @@
-
 import 'dart:io';
 
 void main() {
@@ -136,7 +135,7 @@ void main() {
 //Question no 15
   print('Diamond Shape Triangle ');
 
-  int rows= 4;
+  int rows = 4;
   int updatevalue = 1;
 
   for (int i = 0; i < rows; i++) {
@@ -152,26 +151,44 @@ void main() {
   }
 
 //Question no 16
-String predefinedEmail = 'user@gmail.com';
-String predefinedpassword = '123456';
+  String predefinedEmail = 'user@gmail.com';
+  String predefinedpassword = '123456';
 
-String enterEmail;
-String enterpassword;
+  String enterEmail;
+  String enterpassword;
 
-while (true) {
-  print('Enter Email');
-  enterEmail=stdin.readLineSync()!;
-  print('Enter Password');
-  enterpassword=stdin.readLineSync()!;
-  if (enterEmail==predefinedEmail&&enterpassword==predefinedpassword) {
-    print('Login SuccesFull......');
-    break;
-  } else {
-    print('Incorrect Credientails ....please try again');
+  while (true) {
+    print('Enter Email');
+    enterEmail = stdin.readLineSync()!;
+    print('Enter Password');
+    enterpassword = stdin.readLineSync()!;
+    if (enterEmail == predefinedEmail && enterpassword == predefinedpassword) {
+      print('Login SuccesFull......');
+      break;
+    } else {
+      print('Incorrect Credientails ....please try again');
+    }
   }
-}
 
+  final Map<String, String> UserCredientail = {
+    'user@gmail.com': '123456',
+    'space@gmail.com': '2345',
+    'admin@gmail.com': '34567'
+  };
+  bool islogin = false;
+  while (!islogin) {
+    print('Enter Email');
+    final String enteredEmail = stdin.readLineSync()!;
+    final String enteredPass = stdin.readLineSync()!;
 
+    if (UserCredientail.containsKey(enteredEmail) &&
+        UserCredientail[enteredEmail] == enteredPass) {
+      print('Login SuccessFull.....');
+      islogin = true;
+    } else {
+      print('Try Again..........');
+    }
+  }
 }
 
 enum PatternType { asterick, number, repeated, incresingNumber }
