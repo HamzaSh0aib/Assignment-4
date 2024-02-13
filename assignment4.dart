@@ -169,26 +169,32 @@ void main() {
       print('Incorrect Credientails ....please try again');
     }
   }
+  //Question no 17
 
-  final Map<String, String> UserCredientail = {
-    'user@gmail.com': '123456',
-    'space@gmail.com': '2345',
-    'admin@gmail.com': '34567'
-  };
-  bool islogin = false;
-  while (!islogin) {
-    print('Enter Email');
-    final String enteredEmail = stdin.readLineSync()!;
-    final String enteredPass = stdin.readLineSync()!;
+  List<Map<String,String>> usercredientails = [
+{'email':'user@gmail.com','password':'12345'},
+{'email': 'admin@gmail.com','password': '123456'},
+];
 
-    if (UserCredientail.containsKey(enteredEmail) &&
-        UserCredientail[enteredEmail] == enteredPass) {
-      print('Login SuccessFull.....');
+bool islogin = false;
+while (!islogin) {
+  print('Enter Email:');
+  String enterEmail = stdin.readLineSync()!;
+ 
+  print('Enter Password:');
+  String enterPassword = stdin.readLineSync()!;
+
+  for (final credientails in usercredientails) {
+    if (credientails['email']==enterEmail&& credientails['password']==enterPassword) {
       islogin = true;
-    } else {
-      print('Try Again..........');
-    }
+    print('Login SuccessFull');
+      break;
+    } 
   }
+  if(!islogin){
+    print('Incoorect email and pasword please try again');
+  }
+}
 }
 
 enum PatternType { asterick, number, repeated, incresingNumber }
