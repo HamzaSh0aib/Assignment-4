@@ -158,7 +158,7 @@ void main() {
   String enterpassword;
 
   while (true) {
-    print('Enter Email');
+    print('Enter Email(for first credentails)');
     enterEmail = stdin.readLineSync()!;
     print('Enter Password');
     enterpassword = stdin.readLineSync()!;
@@ -178,7 +178,7 @@ void main() {
 
 bool islogin = false;
 while (!islogin) {
-  print('Enter Email:');
+  print('Enter Email:(for Second Credientails)');
   String enterEmail = stdin.readLineSync()!;
  
   print('Enter Password:');
@@ -198,7 +198,7 @@ while (!islogin) {
 //Question no 18
 List<int> inputNumber = [];
 bool isbool = false;
-
+print('------Enter 7 number-----');
 while (!isbool) {
 int userInput = int.parse(stdin.readLineSync()!);
 inputNumber.add(userInput);
@@ -213,6 +213,18 @@ for (final i in inputNumber) {
     print(i);
   }
 }
+//Question no 19
+List vowels = ['a','e','i','o','u'];
+String userinput = stdin.readLineSync()!;
+List split =  userinput.split("");
+List foundvowels = [];
+for (var i in split) {
+  if (vowels.contains(i)) {
+    foundvowels.add(i);
+  }
+}
+print('There are ${foundvowels.length} vowel word  found  from this String $userinput');
+
 }
 
 enum PatternType { asterick, number, repeated, incresingNumber }
