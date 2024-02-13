@@ -195,6 +195,24 @@ while (!islogin) {
     print('Incoorect email and pasword please try again');
   }
 }
+//Question no 18
+List<int> inputNumber = [];
+bool isbool = false;
+
+while (!isbool) {
+int userInput = int.parse(stdin.readLineSync()!);
+inputNumber.add(userInput);
+if (inputNumber.length==7) {
+  isbool = true;
+  break;
+}  
+}
+print(inputNumber);
+for (final i in inputNumber) {
+  if(i>5){
+    print(i);
+  }
+}
 }
 
 enum PatternType { asterick, number, repeated, incresingNumber }
