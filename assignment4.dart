@@ -257,6 +257,35 @@ for (final  odd in specificNUmber) {
 print('Sum of Squares of all the odd numbers = $sum_of_squres');
 print('Odd Numbers = $oddnumber');
 
+//question no 22
+List<Map<String, dynamic>> studentDetails = [
+    {'name': 'John', 'marks': [80, 75, 90], 'section': 'A', 'rollNumber': 101},
+    {'name': 'Emma', 'marks': [95, 92, 88], 'section': 'B', 'rollNumber': 102},
+    {'name': 'Ryan', 'marks': [70, 65, 75], 'section': 'A', 'rollNumber': 103},
+    // Add more student details...
+  ];
+
+  for (var student in studentDetails) {
+    String name = student['name'];
+    List<int> marks = student['marks'];
+    double averageScore = marks.reduce((a, b) => a + b) / marks.length;
+
+    String grade;
+    if (averageScore >= 90) {
+      grade = 'A';
+    } else if (averageScore >= 80) {
+      grade = 'B';
+    } else if (averageScore >= 70) {
+      grade = 'C';
+    } else if (averageScore >= 60) {
+      grade = 'D';
+    } else {
+      grade = 'F';
+    }
+
+    print('$name: Grade $grade');
+  }
+
 }
 
 enum PatternType { asterick, number, repeated, incresingNumber }
