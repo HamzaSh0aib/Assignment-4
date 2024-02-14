@@ -207,13 +207,14 @@ if (inputNumber.length==7) {
   break;
 }  
 }
-print(inputNumber);
+print('Numbers of List = $inputNumber');
 for (final i in inputNumber) {
   if(i>5){
-    print(i);
+    print('Numbers that are Greater then 5 = $i');
   }
 }
 //Question no 19
+print('Enter the String to find the Vowels words');
 List vowels = ['a','e','i','o','u'];
 String userinput = stdin.readLineSync()!;
 List split =  userinput.split("");
@@ -223,7 +224,25 @@ for (var i in split) {
     foundvowels.add(i);
   }
 }
-print('There are ${foundvowels.length} vowel word  found  from this String $userinput');
+print('There are ${foundvowels.length} vowel word  found  from this String $userinput $foundvowels');
+
+
+//Question no 20
+List numbersoflist = [12,34,56,78,99,12,40];
+int max = numbers[0];
+int min = numbers[0];
+
+for (var i in numbersoflist) {
+  if(i>max){
+    max=i;
+  }
+  else if(i<min){
+    min=i;
+  }
+}
+print('Maximun Element in List = $max');
+print('Minimum Element in list = $min');
+
 
 }
 
