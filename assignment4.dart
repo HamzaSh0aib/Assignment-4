@@ -243,6 +243,19 @@ for (var i in numbersoflist) {
 print('Maximun Element in List = $max');
 print('Minimum Element in list = $min');
 
+//question no 21
+List<int> specificNUmber = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+List oddnumber =[];
+int sum_of_squres = 0;
+for (final  odd in specificNUmber) {
+  if (odd %2!=0) {
+    int squre = odd*odd;
+    sum_of_squres+=squre;
+    oddnumber.add(odd);
+  }
+}
+print('Sum of Squares of all the odd numbers = $sum_of_squres');
+print('Odd Numbers = $oddnumber');
 
 }
 
